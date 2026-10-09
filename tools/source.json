@@ -1,0 +1,1430 @@
+{
+ "%@ s": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "%@ squared": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Components.swift",
+   "Games.swift"
+  ]
+ },
+ "%lld or %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "10 duels": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "20 answers in less than 30 seconds": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "20 squares from 11² to 99². Can you beat it?": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "30 days in a row": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "35² in two seconds": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "7 days in a row": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "A new square every day": {
+  "targets": [
+   "widget"
+  ],
+  "files": [
+   "SquareOfDay.swift"
+  ]
+ },
+ "A number squared is literally a square made of cells": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "A race of 20 squares. Whoever finishes first wins": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "About two seconds per answer": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Achievement unlocked": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "App.swift"
+  ]
+ },
+ "Add that difference to 25. These are the hundreds": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Add that to the round square": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Add the two neighbours together": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Again": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift",
+   "Games.swift"
+  ]
+ },
+ "Ahead by %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "All tricks learned": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Answer a square right on three different days and it is yours. Without practice it starts to fade": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Answer it right to keep it": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Beat your ghost": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Behind by %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Best race": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Best streak: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Capture": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Capture 45 squares": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Capture a whole row of ten": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Capture all 90 squares": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Capture your first square": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Captured": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift",
+   "FieldView.swift",
+   "HomeView.swift"
+  ]
+ },
+ "Captured!": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Capturing": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Cards": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift",
+   "HomeView.swift"
+  ]
+ },
+ "Cards you did not know came back until you did": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Choose a rival": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Choose avatar": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Close": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift",
+   "Theme.swift"
+  ]
+ },
+ "Close to 100": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Close to 50": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Come back tomorrow, or practice a bit more": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Count in your head": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Days in a row: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift",
+   "HomeView.swift"
+  ]
+ },
+ "Days until it fades: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Deck done": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Defend the field": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift",
+   "FieldView.swift",
+   "HomeView.swift"
+  ]
+ },
+ "Don't know": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Done": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Done. Works for every number ending in 5": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Duel": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Ending in 5": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Erase": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Components.swift"
+  ]
+ },
+ "Every next square is the previous one plus both numbers": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Every right answer brings a square closer to being yours": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Exit": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Fading": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Fading, answer to keep it": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Fading: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Faster than your rival. Share the result and challenge a friend": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Field": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "App.swift",
+   "FieldView.swift"
+  ]
+ },
+ "Field defended": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Field grows": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Find how far the number is from 100": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Find how far the number is from 50": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Find the root": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Finish any race to meet your ghost": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Finish every lesson": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Finish faster than your record": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "First cell": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "First version, 2019": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Flip and check": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Four tricks that turn any square from 10 to 99 into a couple of easy steps": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Free": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "From 10 to 99": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "From 41 to 59": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "From 91 to 99": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Full row": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Full table": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Get ready": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Ghost": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift",
+   "RaceView.swift"
+  ]
+ },
+ "Ghost and bots": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Good practice": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Half the field": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Haptics": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Hint": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Home": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "App.swift"
+  ]
+ },
+ "How it started": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "How much is": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "I made the first version in 9th grade, in 2019, when I was 15. No AI, just a lot of tutorials and stubbornness.": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "It ends in %lld, so the root ends in %@": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Keep capturing": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Know": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Knowing squares both ways is what exams check": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Known": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Learn": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "App.swift",
+   "LearnView.swift"
+  ]
+ },
+ "Mistakes": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Multiply its tens digit by the next number": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "My race record": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Neck and neck": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Never makes mistakes. Beat Owl to unlock": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "New record!": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "New squares are yours. Come back tomorrow so they do not fade": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "New: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Next": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Next door": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Next time!": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Nice work": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift"
+  ]
+ },
+ "Numbers ending in 1": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Open the app to capture it on your field": {
+  "targets": [
+   "widget"
+  ],
+  "files": [
+   "SquareOfDay.swift"
+  ]
+ },
+ "Orange is what was added to %lld²: %lld + %lld = %lld cells": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Overtook Owl": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Overtook Robot": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Overtook Turtle": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Owl": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Play": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Play 10 duels with friends": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Player 1": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Player 2": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Practice": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift",
+   "LearnView.swift"
+  ]
+ },
+ "Practice a month without a break": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Practice a week without a break": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Put them together": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Race": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift",
+   "RaceView.swift"
+  ]
+ },
+ "Race under 30 seconds": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Races: %lld": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Repeated": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Reset": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Reset all progress?": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Reset progress": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Reverse": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift",
+   "HomeView.swift"
+  ]
+ },
+ "Right": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "DrillView.swift",
+   "Games.swift",
+   "LearnView.swift",
+   "RaceView.swift"
+  ]
+ },
+ "Right answers on different days: %lld of 3": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Robot": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Root master": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Row is the tens digit, column is the units digit": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "See it in cells": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Seven years later it is rebuilt from scratch: tricks, races, duels and a field to capture. The goal is the same: learn squares from 10 to 99 for good.": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Share": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Side of the square": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Slow and sometimes wrong": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "So close": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Sound": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Square of the day": {
+  "targets": [
+   "widget"
+  ],
+  "files": [
+   "SquareOfDay.swift"
+  ]
+ },
+ "Square the difference. These are the last two digits": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Squares": {
+  "targets": [
+   "infoplist"
+  ],
+  "files": [
+   "CFBundleDisplayName"
+  ]
+ },
+ "Story of the app": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "Subtract that difference from the number. These are the first digits": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Table of": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Table of Squares": {
+  "targets": [
+   "infoplist"
+  ],
+  "files": [
+   "CFBundleDisplayName"
+  ]
+ },
+ "Table of squares": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift",
+   "RaceView.swift"
+  ]
+ },
+ "Take a number that ends in 5": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "Tap to flip. Swipe right if you knew it": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Thank you to everyone who bought the school project. This remake is for you.": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "The whole field": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Time": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Trick learned": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Trick of the day": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Trophies": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "App.swift",
+   "FieldView.swift"
+  ]
+ },
+ "Turtle": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Two on one phone": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Use it in races and duels. It is faster than memorizing": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Use the trick": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Which number squared gives": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "Why a square?": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "LearnView.swift"
+  ]
+ },
+ "Win a race against Owl": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Win a race against Robot": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Win a race against Turtle": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Store.swift"
+  ]
+ },
+ "Write 25 on the right": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "You already know the square of the round number next door": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Lesson.swift"
+  ]
+ },
+ "You win!": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "Games.swift"
+  ]
+ },
+ "You won!": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Your best run, %@": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ },
+ "Your rival finished first. One more try?": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "RaceView.swift"
+  ]
+ },
+ "Yours": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "FieldView.swift"
+  ]
+ },
+ "squares": {
+  "targets": [
+   "app"
+  ],
+  "files": [
+   "HomeView.swift"
+  ]
+ }
+}

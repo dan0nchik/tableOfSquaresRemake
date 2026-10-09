@@ -1,0 +1,7 @@
+build/
+*.xcresult
+xcuserdata/
+.DS_Store
+art/raw/*.json
+Config/Local.xcconfig
+TableOfSquares.xcodeproj/

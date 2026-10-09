@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Таблица квадратов 2.0</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap">
+<style>
+/* Layout: a wrapping gallery of iPhone frames, each one a live screen of the remake */
+:root {
+  --blue: #366FC9;        /* the original button blue */
+  --blue-2: #415FEC;      /* the original shadow blue */
+  --sky: #EAF1FF;
+  --bg: #F4F7FF;
+  --ink: #15233F;
+  --muted: #6B7A99;
+  --card: #FFFFFF;
+  --green: #22C08A;
+  --orange: #FF8A3D;
+  --red: #FF5470;
+  --gold: #FFC83D;
+  --f: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #DDE6F8; color: var(--ink); font-family: var(--f); padding: 32px 16px 64px; }
+header.page { max-width: 1300px; margin: 0 auto 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: end; justify-content: space-between; }
+header.page h1 { margin: 0; font-size: 34px; font-weight: 900; letter-spacing: -.02em; }
+header.page h1 span { color: var(--blue); }
+header.page p { margin: 0; color: var(--muted); font-weight: 700; max-width: 60ch; }
+.gallery { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 36px 28px; justify-items: center; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+figcaption { font-weight: 800; color: var(--muted); font-size: 14px; text-align: center; max-width: 300px; }
+figcaption b { display: block; color: var(--ink); font-size: 16px; }
+.phone { width: 300px; height: 630px; border-radius: 46px; background: #0E1220; padding: 10px; box-shadow: 0 30px 60px rgba(30,50,110,.25); position: relative; }
+.screen { width: 100%; height: 100%; border-radius: 37px; background: var(--bg); overflow: hidden; position: relative; display: flex; flex-direction: column; }
+.island { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 86px; height: 24px; border-radius: 14px; background: #0E1220; z-index: 5; }
+.status { height: 44px; flex: none; display: flex; justify-content: space-between; align-items: center; padding: 6px 26px 0; font-size: 13px; font-weight: 800; }
+.body { flex: 1; min-height: 0; padding: 4px 16px 12px; display: flex; flex-direction: column; gap: 12px; overflow: hidden; }
+.tabbar { flex: none; height: 64px; background: rgba(255,255,255,.92); border-top: 1px solid #E4EAF7; display: grid; grid-template-columns: repeat(4, 1fr); padding: 6px 6px 14px; }
+.tabbar div { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10px; font-weight: 800; color: #A3AFC8; }
+.tabbar div.on { color: var(--blue); }
+.tabbar i { font-style: normal; font-size: 19px; }
+h2 { margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -.02em; }
+.sub { color: var(--muted); font-weight: 700; font-size: 14px; margin-top: -8px; }
+.card { background: var(--card); border-radius: 22px; padding: 14px; box-shadow: -5px 8px 30px rgba(65,95,236,.14); }
+.row { display: flex; gap: 10px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font-weight: 900; font-size: 13px; }
+.btn { border: 0; border-radius: 18px; background: var(--blue); color: #fff; font: 900 17px var(--f); padding: 14px; width: 100%; cursor: pointer; box-shadow: 0 6px 0 #234F9C; transition: transform .08s, box-shadow .08s; }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #234F9C; }
+.btn.ghost { background: var(--sky); color: var(--blue); box-shadow: 0 6px 0 #C9D8F7; }
+.btn.red { background: var(--red); box-shadow: 0 6px 0 #C83252; }
+.btn.green { background: var(--green); box-shadow: 0 6px 0 #14936A; }
+.btn:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.tiny { font-size: 12px; color: var(--muted); font-weight: 800; }
+.big { font-size: 64px; font-weight: 900; letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.bar { height: 10px; border-radius: 6px; background: #E1E8F8; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--blue), var(--blue-2)); }
+.blob { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; flex: none; }
+
+/* home */
+.streak { background: linear-gradient(135deg, #FF9A3D, #FF5470); color: #fff; }
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mode { border-radius: 20px; padding: 12px; color: #fff; display: flex; flex-direction: column; gap: 18px; min-height: 92px; font-weight: 900; }
+.mode small { font-weight: 800; opacity: .85; font-size: 11px; }
+
+/* flashcard */
+.flip { perspective: 900px; flex: 1; min-height: 0; cursor: pointer; }
+.flip-in { position: relative; width: 100%; height: 100%; transition: transform .5s cubic-bezier(.3,1.4,.5,1); transform-style: preserve-3d; }
+.flip.on .flip-in { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: #fff; box-shadow: -5px 8px 30px rgba(65,95,236,.18); }
+.face.back { transform: rotateY(180deg); background: linear-gradient(160deg, var(--blue), var(--blue-2)); color: #fff; }
+.dots { display: grid; gap: 2px; }
+.dots i { width: 7px; height: 7px; border-radius: 2px; background: rgba(255,255,255,.85); }
+
+/* heatmap */
+.heat { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
+.heat div { aspect-ratio: 1; border-radius: 6px; font-size: 9px; font-weight: 900; display: grid; place-items: center; color: rgba(21,35,63,.75); }
+
+/* blitz */
+.ring { width: 120px; height: 120px; margin: 0 auto; position: relative; display: grid; place-items: center; }
+.ring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.keypad button { border: 0; border-radius: 14px; background: #fff; font: 900 22px var(--f); color: var(--ink); padding: 9px 0; box-shadow: 0 4px 0 #D5DEF2; cursor: pointer; }
+.keypad button:active { transform: translateY(3px); box-shadow: 0 1px 0 #D5DEF2; }
+.answer { height: 52px; border-radius: 16px; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 900; box-shadow: inset 0 0 0 3px var(--sky); transition: box-shadow .15s, background .15s; }
+.answer.ok { background: #E3FBF2; box-shadow: inset 0 0 0 3px var(--green); }
+.answer.bad { background: #FFE8ED; box-shadow: inset 0 0 0 3px var(--red); animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.track { display:flex; align-items:center; gap:8px; }
+.track .who { width:22px; text-align:center; }
+.lane { flex:1; height:14px; border-radius:8px; background:#E1E8F8; overflow:hidden; }
+.lane i { display:block; height:100%; width:0; border-radius:8px; background:linear-gradient(90deg,var(--blue),var(--blue-2)); transition:width .3s; }
+.lane i.ghost { background:repeating-linear-gradient(45deg,#B9C6E4 0 6px,#CDD7EE 6px 12px); }
+.combo { font-weight: 900; color: var(--orange); font-size: 18px; transition: transform .15s; }
+.combo.pop { transform: scale(1.35); }
+
+/* lesson */
+.digits { display: flex; justify-content: center; gap: 6px; font-size: 44px; font-weight: 900; }
+.digits span { min-width: 34px; text-align: center; border-radius: 12px; padding: 4px 6px; transition: background .3s, color .3s, transform .3s; }
+.digits span.hl { background: var(--gold); transform: translateY(-4px); }
+.digits span.new { background: var(--green); color: #fff; }
+.steps { display: flex; gap: 6px; justify-content: center; }
+.steps i { width: 26px; height: 6px; border-radius: 4px; background: #D5DEF2; }
+.steps i.on { background: var(--blue); }
+
+/* visual square */
+.grid-sq { display: grid; gap: 2px; margin: 0 auto; }
+.grid-sq i { border-radius: 3px; background: var(--blue); animation: pop .25s both; }
+.grid-sq i.extra { background: var(--orange); }
+@keyframes pop { from { transform: scale(0); } }
+input[type=range] { width: 100%; accent-color: var(--blue); }
+
+/* reverse */
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choices button { border: 0; border-radius: 18px; background: #fff; font: 900 28px var(--f); color: var(--ink); padding: 18px 0; box-shadow: 0 5px 0 #D5DEF2; cursor: pointer; }
+.choices button.ok { background: var(--green); color: #fff; box-shadow: 0 5px 0 #14936A; }
+.choices button.bad { background: var(--red); color: #fff; box-shadow: 0 5px 0 #C83252; }
+
+/* duel */
+.duel { flex: 1; display: grid; grid-template-rows: 1fr auto 1fr; }
+.half { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 14px; }
+.half.top { transform: rotate(180deg); background: #FFEFF2; }
+.half.bottom { background: var(--sky); }
+.duel .mid { text-align: center; font-weight: 900; padding: 6px; background: var(--ink); color: #fff; font-size: 13px; letter-spacing: .1em; }
+.duel .choices button { font-size: 22px; padding: 12px 0; }
+
+/* map */
+.map { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.node { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; color: #fff; box-shadow: 0 7px 0 rgba(0,0,0,.18); position: relative; }
+.node small { position: absolute; bottom: -20px; font-size: 13px; letter-spacing: 2px; }
+.node.lock { background: #CBD5EA; color: #8D9AB8; }
+
+/* widget & share */
+.widget { width: 150px; height: 150px; border-radius: 26px; padding: 14px; color: #fff; background: linear-gradient(160deg, var(--blue), var(--blue-2)); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 12px 24px rgba(54,111,201,.35); }
+.share { border-radius: 24px; padding: 18px; background: linear-gradient(150deg, #15233F, #2B3D7A); color: #fff; display: flex; flex-direction: column; gap: 6px; }
+.wall { flex: 1; background: linear-gradient(180deg, #8EC5FF, #B9A2FF); padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.icons i { aspect-ratio: 1; border-radius: 14px; background: rgba(255,255,255,.55); }
+
+/* about */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ba img { width: 100%; border-radius: 14px; display: block; box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
+.confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 4; }
+.confetti i { position: absolute; top: -10px; width: 8px; height: 12px; border-radius: 2px; animation: fall 1.6s ease-in forwards; }
+@keyframes fall { to { transform: translateY(680px) rotate(540deg); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="page">
+  <h1>Таблица квадратов <span>2.0</span></h1>
+  <p>Ремейк школьного приложения. Всё ниже кликабельно: карточки переворачиваются, в гонке можно обогнать призрака, урок показывает приём по шагам.</p>
+</header>
+
+<main class="gallery">
+
+<!-- 1. HOME -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <div class="row" style="justify-content:space-between">
+      <div><h2>Квадраты</h2><div class="tiny">Поле захвачено: 54 из 90</div></div>
+      <span class="pill streak">🔥 12</span>
+    </div>
+    <div class="card" style="background:linear-gradient(150deg,var(--blue),var(--blue-2));color:#fff">
+      <div class="row" style="justify-content:space-between"><b style="font-size:18px">Отбить поле</b><span class="pill" style="background:rgba(255,255,255,.2)">2 мин</span></div>
+      <div style="font-weight:800;opacity:.9;margin:6px 0 12px;font-size:14px">7 клеток тускнеют, 5 новых ждут захвата</div>
+      <div class="bar" style="background:rgba(255,255,255,.25)"><i style="width:40%;background:#fff"></i></div>
+      <div style="font-weight:900;font-size:12px;margin-top:6px;opacity:.9">5 из 12</div>
+    </div>
+    <div class="modes">
+      <div class="mode" style="background:var(--blue)">🃏<span>Карточки<br><small>10–99</small></span></div>
+      <div class="mode" style="background:var(--orange)">👻<span>Гонка<br><small>призрак и боты</small></span></div>
+      <div class="mode" style="background:var(--green)">🔁<span>Обратный<br><small>√ числа</small></span></div>
+      <div class="mode" style="background:var(--red)">⚔️<span>Дуэль<br><small>вдвоём</small></span></div>
+    </div>
+    <div class="card row"><div class="blob" style="background:#FFF5D6">💡</div><div><b>Приём дня</b><div class="tiny">Числа около 50: 53² = 2500 + 300 + 9</div></div></div>
+  </div>
+  <div class="tabbar"><div class="on"><i>🏠</i>Главная</div><div><i>📘</i>Учёба</div><div><i>🎮</i>Игры</div><div><i>📊</i>Поле</div></div>
+</div></div>
+<figcaption><b>Главная</b>Серия дней, ежедневное задание, режимы</figcaption>
+</figure>
+
+<!-- 2. FLASHCARDS + SRS -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <div class="row" style="justify-content:space-between"><span class="tiny">✕</span><span class="tiny" id="fc-count">3 / 12</span><span class="pill" style="background:#FFF1E6;color:var(--orange)">🔁 повтор</span></div>
+    <div class="bar"><i id="fc-bar" style="width:25%"></i></div>
+    <div class="flip" id="fc" tabindex="0" role="button" aria-label="Перевернуть карточку">
+      <div class="flip-in">
+        <div class="face"><div class="tiny">Сколько будет</div><div class="big" id="fc-q">27²</div><div class="tiny">Нажми, чтобы проверить</div></div>
+        <div class="face back"><div class="big" id="fc-a">729</div><div class="dots" id="fc-dots"></div><div style="font-weight:800;opacity:.85;font-size:13px" id="fc-hint">27 × 27</div></div>
+      </div>
+    </div>
+    <div class="row"><button class="btn red" id="fc-no">Не знаю</button><button class="btn green" id="fc-yes">Знаю</button></div>
+  </div>
+</div></div>
+<figcaption><b>Карточки 2.0</b>Переворот, «знаю / не знаю», слабые чаще всплывают снова</figcaption>
+</figure>
+
+<!-- 3. LESSON: ends with 5 -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body" style="gap:16px">
+    <div class="steps" id="ls-steps"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="tiny" style="text-align:center">Урок 1 из 4: числа на 5</div>
+    <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <div class="digits" id="ls-digits"><span>3</span><span>5</span><span>²</span></div>
+      <div style="text-align:center;font-weight:800;font-size:17px;min-height:72px" id="ls-text">Возьмём число, которое оканчивается на 5</div>
+    </div>
+    <button class="btn" id="ls-next">Дальше</button>
+  </div>
+</div></div>
+<figcaption><b>Уроки-приёмы</b>Твой урок про пятёрки, ожил по шагам. Плюс «около 50», «около 100», «через соседа»</figcaption>
+</figure>
+
+<!-- 4. BLITZ -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body" style="position:relative">
+    <div class="confetti" id="bz-conf"></div>
+    <div class="row" style="justify-content:space-between"><span class="pill" style="background:#fff">⏱ <span id="bz-time">0.0</span></span><span class="combo" id="bz-combo"></span><span class="pill" style="background:#fff">⭐ <span id="bz-score">0</span>/20</span></div>
+    <div class="card" style="padding:10px 12px;display:flex;flex-direction:column;gap:8px">
+      <div class="track"><span class="who">👻</span><div class="lane"><i id="gh-bar" class="ghost"></i></div><span class="tiny" id="gh-n">0</span></div>
+      <div class="track"><span class="who">🙂</span><div class="lane"><i id="me-bar"></i></div><span class="tiny" id="me-n">0</span></div>
+      <div class="tiny" id="race-state" style="text-align:center">Призрак: твой рекорд 31.4 с</div>
+    </div>
+    <div style="text-align:center;font-size:40px;font-weight:900" id="bz-q">18² =</div>
+    <div class="answer" id="bz-ans"></div>
+    <div class="keypad" id="bz-keys"></div>
+  </div>
+</div></div>
+<figcaption><b>Гонка с призраком</b>20 примеров наперегонки с собственным рекордом. Попробуй ввести ответ</figcaption>
+</figure>
+
+<!-- 5. HEATMAP -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <h2>Поле</h2>
+    <div class="row">
+      <div class="card" style="flex:1;padding:10px"><div class="tiny">Выучено</div><b style="font-size:24px">54<span class="tiny"> / 90</span></b></div>
+      <div class="card" style="flex:1;padding:10px"><div class="tiny">Рекорд гонки</div><b style="font-size:24px">31.4 с</b></div>
+    </div>
+    <div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><b>Захвачено 54 из 90</b><span class="tiny">10–99</span></div><div class="heat" id="heat"></div>
+      <div class="row tiny" style="margin-top:8px;justify-content:space-between"><span>⬜ свободно</span><span>🟦 захвачено</span><span>🩶 тускнеет</span></div></div>
+    <div class="card row"><div class="blob" style="background:#FFE8ED">🎯</div><div><b>Тускнеют</b><div class="tiny">67², 76², 87², 78² надо отбить сегодня</div></div></div>
+  </div>
+  <div class="tabbar"><div><i>🏠</i>Главная</div><div><i>📘</i>Учёба</div><div><i>🎮</i>Игры</div><div class="on"><i>📊</i>Поле</div></div>
+</div></div>
+<figcaption><b>Поле 10–99</b>Три верных ответа в разные дни, и клетка твоя. Без повторения она тускнеет</figcaption>
+</figure>
+
+<!-- 6. VISUAL SQUARE -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <h2>Почему так?</h2>
+    <div class="sub">Квадрат числа это буквально квадрат из клеток</div>
+    <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:12px">
+      <div class="grid-sq" id="vs-grid"></div>
+      <div style="text-align:center;font-weight:900;font-size:26px" id="vs-label">12² = 144</div>
+      <div class="tiny" style="text-align:center" id="vs-hint">Оранжевым: что добавилось к 11² (2·12 − 1 = 23)</div>
+    </div>
+    <label class="tiny" for="vs-n">Сторона квадрата</label>
+    <input type="range" id="vs-n" min="2" max="20" value="12">
+  </div>
+</div></div>
+<figcaption><b>Визуальный квадрат</b>Тяни ползунок: видно, почему n² = (n−1)² + 2n − 1</figcaption>
+</figure>
+
+<!-- 7. REVERSE -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body" style="justify-content:center;gap:18px">
+    <div class="tiny" style="text-align:center">Обратный режим, для ОГЭ</div>
+    <div class="card" style="text-align:center;padding:26px 10px"><div class="tiny">Из какого числа квадрат</div><div class="big" id="rv-q">576</div></div>
+    <div class="choices" id="rv-choices"></div>
+    <div class="tiny" style="text-align:center" id="rv-tip">Подсказка: оканчивается на 6, значит корень оканчивается на 4 или 6</div>
+  </div>
+</div></div>
+<figcaption><b>Обратный режим</b>По квадрату найди число. Учит извлекать корень</figcaption>
+</figure>
+
+<!-- 8. DUEL -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="duel">
+    <div class="half top"><div class="row" style="justify-content:space-between"><b>Игрок 2</b><span class="pill" style="background:#fff">⭐ 7</span></div><div style="text-align:center;font-size:34px;font-weight:900">23² =</div><div class="choices"><button>529</button><button>539</button><button>519</button><button>629</button></div></div>
+    <div class="mid">⚔️ ДУЭЛЬ, 0:41</div>
+    <div class="half bottom"><div class="row" style="justify-content:space-between"><b>Игрок 1</b><span class="pill" style="background:#fff">⭐ 9</span></div><div style="text-align:center;font-size:34px;font-weight:900">23² =</div><div class="choices"><button>529</button><button>539</button><button>519</button><button>629</button></div></div>
+  </div>
+</div></div>
+<figcaption><b>Дуэль на одном телефоне</b>Экран пополам, кто быстрее. Для перемены и рилсов</figcaption>
+</figure>
+
+<!-- 9. LEVEL MAP -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <h2>Соперник</h2>
+    <div class="sub">С кем гоняемся на 20 примеров</div>
+    <div class="card row"><div class="blob" style="background:#EEF1F8">👻</div><div style="flex:1"><b>Призрак</b><div class="tiny">Твой лучший забег, 31.4 с</div></div><span class="pill" style="background:var(--sky);color:var(--blue)">Старт</span></div>
+    <div class="card row"><div class="blob" style="background:#E3FBF2">🐢</div><div style="flex:1"><b>Новичок</b><div class="tiny">4 с на ответ, ошибается</div></div><span class="pill" style="background:#E3FBF2;color:var(--green)">🏆 побеждён</span></div>
+    <div class="card row"><div class="blob" style="background:#FFF5D6">🎓</div><div style="flex:1"><b>Отличник</b><div class="tiny">2 с на ответ</div></div><span class="pill" style="background:#FFF5D6;color:#B58500">40 с</span></div>
+    <div class="card row" style="opacity:.6"><div class="blob" style="background:#EEF1F8">🤖</div><div style="flex:1"><b>Калькулятор</b><div class="tiny">1 с на ответ, без ошибок. Откроется после Отличника</div></div><span>🔒</span></div>
+  </div>
+  <div class="tabbar"><div><i>🏠</i>Главная</div><div><i>📘</i>Учёба</div><div class="on"><i>🎮</i>Игры</div><div><i>📊</i>Поле</div></div>
+</div></div>
+<figcaption><b>Соперники</b>Свой рекорд или боты трёх скоростей</figcaption>
+</figure>
+
+<!-- 10. ACHIEVEMENTS -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <h2>Достижения</h2>
+    <div class="card row"><div class="blob" style="background:#FFF5D6">🏆</div><div style="flex:1"><b>Все квадраты до 30</b><div class="tiny">Получено 3 октября</div></div></div>
+    <div class="card row"><div class="blob" style="background:#FFE9DE">🔥</div><div style="flex:1"><b>Серия 7 дней</b><div class="tiny">Получено вчера</div></div></div>
+    <div class="card row"><div class="blob" style="background:#E3FBF2">⚡</div><div style="flex:1"><b>Обогнал Отличника</b><div class="tiny">Получено сегодня</div></div></div>
+    <div class="card row" style="opacity:.6"><div class="blob" style="background:#EEF1F8">💯</div><div style="flex:1"><b>Все квадраты до 100</b><div class="bar" style="margin-top:6px"><i style="width:60%"></i></div></div></div>
+    <div class="card row" style="opacity:.6"><div class="blob" style="background:#EEF1F8">⚔️</div><div style="flex:1"><b>10 побед в дуэли</b><div class="bar" style="margin-top:6px"><i style="width:30%"></i></div></div></div>
+  </div>
+</div></div>
+<figcaption><b>Достижения</b>Поводы вернуться и похвастаться</figcaption>
+</figure>
+
+<!-- 11. WIDGET + SHARE -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="wall">
+    <div style="height:30px"></div>
+    <div class="row" style="align-items:flex-start;gap:14px">
+      <div class="widget"><div style="font-weight:900;font-size:12px;opacity:.85">КВАДРАТ ДНЯ</div><div><div style="font-size:42px;font-weight:900;line-height:1">47²</div><div style="font-weight:900;font-size:20px">= 2209</div></div><div style="font-weight:900;font-size:13px">🔥 12 дней</div></div>
+      <div class="icons" style="grid-template-columns:repeat(2,1fr);flex:1"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="share">
+      <div style="font-weight:900;font-size:12px;opacity:.7;letter-spacing:.1em">МОЙ РЕКОРД В ГОНКЕ</div>
+      <div style="font-size:48px;font-weight:900;line-height:1">31.4 <span style="font-size:18px">с на 20 примеров</span></div>
+      <div style="font-weight:800;font-size:13px;opacity:.8">Сможешь больше? Таблица квадратов 2.0</div>
+    </div>
+    <div class="icons"><i></i><i></i><i></i><i></i></div>
+  </div>
+</div></div>
+<figcaption><b>Виджет и карточка рекорда</b>Квадрат дня на экране «Домой», рекорд для сторис</figcaption>
+</figure>
+
+<!-- 12. ABOUT: BEFORE / AFTER -->
+<figure>
+<div class="phone"><div class="island"></div><div class="screen">
+  <div class="status"><span>9:41</span><span>●●● ⌁</span></div>
+  <div class="body">
+    <h2>История</h2>
+    <div class="sub">Первую версию я сделал в 9 классе, в 2019 году, в 15 лет. Без ИИ</div>
+    <div class="ba"><div><img src="img/old1.png" alt="Главный экран 2019"><div class="tiny" style="text-align:center;margin-top:4px">2019</div></div><div><img src="img/old5.png" alt="Тест 2019"><div class="tiny" style="text-align:center;margin-top:4px">2019</div></div></div>
+    <div class="card"><b>Спасибо 46 первым покупателям</b><div class="tiny" style="margin-top:4px">Вы купили школьный проект. Версия 2.0 для вас бесплатно.</div></div>
+  </div>
+  <div class="tabbar"><div><i>🏠</i>Главная</div><div><i>📘</i>Учёба</div><div><i>🎮</i>Игры</div><div class="on"><i>📊</i>Поле</div></div>
+</div></div>
+<figcaption><b>История</b>Было и стало, со скриншотами первой версии</figcaption>
+</figure>
+
+</main>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const sq = n => n * n;
+
+  // ---- flashcards
+  const deck = [27, 13, 64, 45, 76, 18, 33, 89, 52, 21, 67, 95];
+  let fi = 2;
+  const fc = $('fc');
+  function showCard() {
+    const n = deck[fi % deck.length];
+    fc.classList.remove('on');
+    setTimeout(() => {
+      $('fc-q').textContent = n + '²';
+      $('fc-a').textContent = sq(n);
+      $('fc-hint').textContent = n % 10 === 5 ? `${Math.floor(n/10)}·${Math.floor(n/10)+1} = ${Math.floor(n/10)*(Math.floor(n/10)+1)}, приписать 25` : `${n} × ${n}`;
+      const d = $('fc-dots'); const k = Math.min(n, 12);
+      d.style.gridTemplateColumns = `repeat(${k}, 7px)`; d.innerHTML = '<i></i>'.repeat(k * k);
+      $('fc-count').textContent = `${fi % deck.length + 1} / ${deck.length}`;
+      $('fc-bar').style.width = ((fi % deck.length + 1) / deck.length * 100) + '%';
+    }, 180);
+  }
+  fc.addEventListener('click', () => fc.classList.toggle('on'));
+  fc.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); fc.classList.toggle('on'); } });
+  $('fc-yes').onclick = () => { fi++; showCard(); };
+  $('fc-no').onclick = () => { deck.push(deck[fi % deck.length]); fi++; showCard(); };
+  showCard();
+
+  // ---- lesson
+  const steps = [
+    { d: ['3','5','²'], hl: [1], t: 'Возьмём число, которое оканчивается на 5' },
+    { d: ['3','5','²'], hl: [0], t: 'Первую цифру умножим на следующую: 3 × 4' },
+    { d: ['1','2'], nw: [0,1], t: '3 × 4 = 12' },
+    { d: ['1','2','2','5'], nw: [2,3], t: 'Припишем 25 справа. 35² = 1225 🎉' },
+  ];
+  let li = 0;
+  function renderLesson() {
+    const s = steps[li];
+    $('ls-digits').innerHTML = s.d.map((c, i) => `<span class="${(s.hl||[]).includes(i)?'hl':''} ${(s.nw||[]).includes(i)?'new':''}">${c}</span>`).join('');
+    $('ls-text').textContent = s.t;
+    [...$('ls-steps').children].forEach((el, i) => el.classList.toggle('on', i <= li));
+    $('ls-next').textContent = li === steps.length - 1 ? 'Ещё раз' : 'Дальше';
+  }
+  $('ls-next').onclick = () => { li = (li + 1) % steps.length; renderLesson(); };
+  renderLesson();
+
+  // ---- blitz
+  let bzN = 18, typed = '', score = 0, combo = 0, time = 0, timer = null, ghost = 0;
+  const GOAL = 20, GHOST_T = 31.4;
+  const keys = ['1','2','3','4','5','6','7','8','9','⌫','0','✓'];
+  $('bz-keys').innerHTML = keys.map(k => `<button data-k="${k}">${k}</button>`).join('');
+  function burst() {
+    const c = $('bz-conf'); const colors = ['#366FC9','#FF8A3D','#22C08A','#FFC83D','#FF5470'];
+    for (let i = 0; i < 26; i++) { const e = document.createElement('i'); e.style.left = Math.random()*100+'%'; e.style.background = colors[i%5]; e.style.animationDelay = Math.random()*.3+'s'; c.appendChild(e); setTimeout(() => e.remove(), 2000); }
+  }
+  function startTimer() {
+    if (timer) return;
+    timer = setInterval(() => {
+      time += .1; $('bz-time').textContent = time.toFixed(1);
+      ghost = Math.min(GOAL, time / GHOST_T * GOAL);
+      $('gh-bar').style.width = ghost / GOAL * 100 + '%'; $('gh-n').textContent = Math.floor(ghost);
+      const d = score - ghost;
+      $('race-state').textContent = ghost >= GOAL ? 'Призрак финишировал. Ещё раз?' : d >= 0 ? `Впереди на ${d.toFixed(1)} 🔥` : `Отстаёшь на ${(-d).toFixed(1)}`;
+      if (ghost >= GOAL) { clearInterval(timer); timer = null; setTimeout(reset, 1500); }
+    }, 100);
+  }
+  function reset() { time = 0; score = 0; combo = 0; ghost = 0; $('bz-score').textContent = 0; $('me-bar').style.width = '0%'; $('me-n').textContent = 0; $('gh-bar').style.width = '0%'; $('gh-n').textContent = 0; $('bz-time').textContent = '0.0'; $('race-state').textContent = 'Призрак: твой рекорд 31.4 с'; }
+  function nextQ() { bzN = 11 + Math.floor(Math.random() * 30); $('bz-q').textContent = bzN + '² ='; typed = ''; $('bz-ans').textContent = ''; $('bz-ans').className = 'answer'; }
+  $('bz-keys').addEventListener('click', e => {
+    const k = e.target.dataset.k; if (!k) return; startTimer();
+    if (k === '⌫') typed = typed.slice(0, -1);
+    else if (k === '✓') {
+      const ok = +typed === sq(bzN);
+      $('bz-ans').className = 'answer ' + (ok ? 'ok' : 'bad');
+      if (ok) { combo++; score++; $('me-bar').style.width = score / GOAL * 100 + '%'; $('me-n').textContent = score; if (score >= GOAL) { clearInterval(timer); timer = null; burst(); $('race-state').textContent = `Финиш за ${time.toFixed(1)} с 🏆`; setTimeout(reset, 2500); } }
+      else { combo = 0; $('bz-ans').textContent = sq(bzN); }
+      $('bz-score').textContent = score;
+      const cb = $('bz-combo'); cb.textContent = combo >= 2 ? `комбо ×${combo}` : ''; cb.classList.add('pop'); setTimeout(() => cb.classList.remove('pop'), 150);
+      setTimeout(nextQ, ok ? 350 : 900); return;
+    } else if (typed.length < 4) typed += k;
+    $('bz-ans').textContent = typed;
+  });
+
+  // ---- heatmap
+  const heat = $('heat');
+  for (let n = 10; n <= 99; n++) {
+    const known = n < 30 ? 1 : n < 50 ? .55 + Math.random() * .45 : Math.random();
+    const fading = [67,76,87,78].includes(n), mine = known > .5 && !fading;
+    const st = mine ? 'background:var(--blue);color:#fff' : fading ? 'background:#AFC3EA;color:#fff' : 'background:#E6ECF8';
+    heat.insertAdjacentHTML('beforeend', `<div style="${st}" title="${n}² = ${sq(n)}">${n}</div>`);
+  }
+
+  // ---- visual square
+  function renderSq() {
+    const n = +$('vs-n').value, cell = Math.min(14, Math.floor(200 / n));
+    const g = $('vs-grid'); g.style.gridTemplateColumns = `repeat(${n}, ${cell}px)`;
+    let h = ''; for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) h += `<i class="${r === n-1 || c === n-1 ? 'extra' : ''}" style="height:${cell}px;animation-delay:${(r+c)*6}ms"></i>`;
+    g.innerHTML = h;
+    $('vs-label').textContent = `${n}² = ${sq(n)}`;
+    $('vs-hint').textContent = `Оранжевым: что добавилось к ${n-1}² (2·${n} − 1 = ${2*n-1})`;
+  }
+  $('vs-n').addEventListener('input', renderSq); renderSq();
+
+  // ---- reverse
+  function renderRv() {
+    const n = 12 + Math.floor(Math.random() * 80); const opts = new Set([n]);
+    while (opts.size < 4) opts.add(Math.max(11, n + [-2,-1,1,2,10,-10][Math.floor(Math.random()*6)]));
+    $('rv-q').textContent = sq(n);
+    const last = sq(n) % 10, map = {0:'0',1:'1 или 9',4:'2 или 8',5:'5',6:'4 или 6',9:'3 или 7'};
+    $('rv-tip').textContent = `Подсказка: оканчивается на ${last}, значит корень оканчивается на ${map[last]}`;
+    $('rv-choices').innerHTML = [...opts].sort(() => Math.random() - .5).map(o => `<button data-v="${o}">${o}</button>`).join('');
+    $('rv-choices').onclick = e => { const v = +e.target.dataset.v; if (!v) return; e.target.classList.add(v === n ? 'ok' : 'bad'); setTimeout(renderRv, 700); };
+  }
+  renderRv();
+})();
+</script>
+</body>
+</html>

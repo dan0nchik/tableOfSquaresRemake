@@ -1,0 +1,5 @@
+// Public defaults. Put your own team and bundle id into Config/Local.xcconfig (not committed).
+APP_BUNDLE_ID = com.example.TableOfSquares
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"
